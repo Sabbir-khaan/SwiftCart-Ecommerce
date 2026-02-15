@@ -36,7 +36,8 @@
     <link rel="stylesheet" href="./Styles/style.css" />
   </head>
   <body>
-    <header class="shadow-sm">
+    <header>
+      <!-- Navbar Start -->
       <nav class="max-w-[80%] mx-auto">
         <div class="navbar">
           <div class="navbar-start">
@@ -88,15 +89,53 @@
                 <a href="" class="p-2 rounded hover:text-[#4F39F6]">About</a>
               </li>
               <li>
-                <a href="" class="p-2 rounded hover:text-[#4F39F6]"> Contacts </a>
+                <a href="" class="p-2 rounded hover:text-[#4F39F6]">
+                  Contacts
+                </a>
               </li>
             </ul>
           </div>
           <div class="navbar-end">
-            <button class="opacity-80"><i class="fa-solid fa-cart-shopping"></i></button>
+            <button class="opacity-80">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
           </div>
         </div>
       </nav>
+
+      <!-- Navbar End -->
+
+      <!-- Banner Section Start -->
+      <section>
+        <div
+          style="
+            background:
+              linear-gradient(to right, rgba(5, 4, 29, 0.9), transparent),
+              url(./assets/banner-image.png);
+            height: 38rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          "
+        >
+          <div class="max-w-[78%] mx-auto pt-40 space-y-4">
+            <h1 class="text-white text-5xl font-bold opacity-95">
+              Best Collections For You
+            </h1>
+            <p class="text-white opacity-60">
+              Discover the latest trends in fashion, electronics, and more. Shop
+              with <br />
+              confidence and style at SwiftCart.
+            </p>
+            <button
+              class="py-3 px-6 bg-[#4F39F6] text-white rounded-lg font-semibold"
+            >
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Banner Section End -->
     </header>
   </body>
 </html>
