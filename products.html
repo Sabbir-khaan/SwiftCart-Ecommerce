@@ -38,7 +38,7 @@
   <body>
     <header class="shadow-sm">
       <!-- Navbar Start -->
-      <nav class="max-w-[80%] mx-auto">
+      <nav class="lg:max-w-[80%] mx-auto">
         <div class="navbar">
           <div class="navbar-start">
             <div class="dropdown">
@@ -60,17 +60,26 @@
               </div>
               <ul
                 tabindex="-1"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-36 p-2 shadow"
               >
-                <li><a>Item 1</a></li>
                 <li>
-                  <a>Parent</a>
-                  <ul class="p-2">
-                    <li><a>Submenu 1</a></li>
-                    <li><a>Submenu 2</a></li>
-                  </ul>
+                  <a href="./index.html" class="p-2 rounded hover:text-[#4F39F6]">Home</a>
                 </li>
-                <li><a>Item 3</a></li>
+                <li>
+                  <a
+                    href="./products.html"
+                    class="p-2 rounded hover:text-[#4F39F6]"
+                    >Products</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="p-2 rounded hover:text-[#4F39F6]">About</a>
+                </li>
+                <li>
+                  <a href="" class="p-2 rounded hover:text-[#4F39F6]">
+                    Contacts
+                  </a>
+                </li>
               </ul>
             </div>
             <h1 class="btn btn-ghost text-2xl text-[#4F39F6]">SwiftCart</h1>
@@ -113,16 +122,16 @@
     <main>
       <!-- Product By Categories Section Start -->
       <section>
-        <div class="mt-10">
-          <h1 class="text-5xl font-bold text-center">Our Products</h1>
+        <div class="lg:mt-10 mt-6">
+          <h1 class="lg:text-5xl text-4xl font-bold text-center">Our Products</h1>
         </div>
         <div
           id="categories-container"
-          class="flex justify-center items-center gap-6 mt-10"
+          class="flex flex-wrap justify-center items-center gap-3 lg:gap-6 lg:mt-10 mt-6"
         ></div>
       </section>
-      <section class="max-w-[80%] mx-auto my-20">
-        <div id="category-container" class="grid grid-cols-4 gap-10">
+      <section class="lg:max-w-[80%] mx-auto my-20">
+        <div id="category-container" class="grid lg:grid-cols-4 p-4 lg:p-0 gap-10">
           <!-- <div class="border border-gray-200 rounded-xl">
             <img
               class="rounded-t-xl"
@@ -173,16 +182,28 @@
                 </form>
               </div>
               <h1 class="text-2xl">
-                <span class="font-bold">Title:</span> <span class="text-xl opacity-80">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</span>
+                <span class="font-bold">Title:</span>
+                <span class="text-xl opacity-80"
+                  >Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</span
+                >
               </h1>
               <p class="mt-4">
-                <span class="text-2xl font-bold">Description:</span> <span class="opacity-70 text-lg">Your perfect pack for everyday use and walks in the
-                forest. Stash your laptop (up to 15 inches) in the padded
-                sleeve, your everyday</span>
+                <span class="text-2xl font-bold">Description:</span>
+                <span class="opacity-70 text-lg"
+                  >Your perfect pack for everyday use and walks in the forest.
+                  Stash your laptop (up to 15 inches) in the padded sleeve, your
+                  everyday</span
+                >
               </p>
-              <p class="mt-4 text-lg"><span class="text-xl font-bold">Price:</span> <span class="opacity-70">$100.50</span></p>
+              <p class="mt-4 text-lg">
+                <span class="text-xl font-bold">Price:</span>
+                <span class="opacity-70">$100.50</span>
+              </p>
               <div>
-                <p class="mt-4 text-lg"><span class="text-xl font-bold">Rating:</span><span class="opacity-70">(560)</span></p>
+                <p class="mt-4 text-lg">
+                  <span class="text-xl font-bold">Rating:</span
+                  ><span class="opacity-70">(560)</span>
+                </p>
               </div>
               <div class="flex justify-between gap-3 items-center mt-8">
                 <button
@@ -202,6 +223,68 @@
       </section>
       <!-- Product By Categories Section End -->
     </main>
+    <footer class="bg-[#1E2939] lg:py-14 py-5">
+      <div
+        class="grid lg:grid-cols-4 gap-6 lg:gap-0 text-white p-4 lg:p-0 lg:max-w-[80%] mx-auto"
+      >
+        <div class="space-y-4">
+          <h1 class="text-2xl font-semibold text-[#4F39F6]">SwiftCart</h1>
+          <p class="opacity-70">
+            Your one-stop shop for all your fashion <br />
+            and lifestyle needs. Quality products, fast <br />
+            delivery, and excellent support
+          </p>
+        </div>
+        <div class="">
+          <h1 class="font-bold opacity-80">QUICK LINKS</h1>
+          <ul class="space-y-5 mt-5 opacity-70">
+            <li><a href="">Home</a></li>
+            <li><a href="./products.html">Products</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contacts</a></li>
+          </ul>
+        </div>
+        <div>
+          <h1 class="font-bold opacity-80">SUPPORT</h1>
+          <ul class="space-y-5 mt-5 opacity-70">
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Shipping</a></li>
+            <li><a href="">Returns</a></li>
+            <li><a href="">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h1 class="opacity-80">SUBSCRIBE TO OUR NEWSLETTER</h1>
+          <p class="opacity-70">
+            The latest news, articles, and resources, <br />
+            sent to your inbox weekly.
+          </p>
+          <input
+            type="text"
+            placeholder="Enter Your Email"
+            class="input text-black w-4/6 mt-3"
+          />
+          <button class="bg-[#4F39F6] px-3 py-2 rounded-lg">Subscribe</button>
+        </div>
+      </div>
+      <hr
+        class="text-white lg:max-w-[80%] mx-auto opacity-30 my-8 font-semibold"
+      />
+      <div
+        class="lg:flex p-4 lg:p-0 space-y-4 lg:space-y-0 justify-between items-center lg:max-w-[80%] mx-auto"
+      >
+        <h3 class="text-white opacity-70">
+          &copy SwiftCart, Inc. All rights reserved.
+        </h3>
+        <div class="text-white text-2xl opacity-80">
+          <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-linkedin"></i></a>
+          <a href=""><i class="fa-regular fa-envelope"></i></a>
+        </div>
+      </div>
+    </footer>S
     <script src="./Scripts/script.js"></script>
   </body>
 </html>
