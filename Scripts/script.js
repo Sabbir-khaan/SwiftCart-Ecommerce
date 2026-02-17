@@ -6,34 +6,54 @@ const loadAllProductsLevel = () => {
 
 const removeActiveClass = () => {
   const categoryButton = document.querySelectorAll(".category-btn");
-  // console.log(categoryButton);
   categoryButton.forEach((btn) => btn.classList.remove("active"));
+};
+
+const loading = (status) => {
+  if (status == true) {
+    document.getElementById("loading").classList.remove("hidden");
+    document.getElementById("category-container").classList.add("hidden");
+  } else {
+    document.getElementById("category-container").classList.remove("hidden");
+    document.getElementById("loading").classList.add("hidden");
+  }
 };
 
 const productByCategory = (category) => {
   const url = `https://fakestoreapi.com/products/category/${category}`;
+  loading(true);
   fetch(url)
     .then((res) => res.json())
     .then((result) => {
       removeActiveClass();
       const activeBtn = document.getElementById(`${category}`);
-      // console.log(activeBtn);
+      activeBtn.classList.add("active");
+      displayProductCategories(result);
+    });
+};
+const allCategories = () => {
+  const url = "https://fakestoreapi.com/products";
+  loading(true);
+  fetch(url)
+    .then((res) => res.json())
+    .then((result) => {
+      removeActiveClass();
+      const activeBtn = document.getElementById(`all`);
+
       activeBtn.classList.add("active");
       displayProductCategories(result);
     });
 };
 
 const singleProductDetails = (id) => {
-  // console.log(id);
   const url = `https://fakestoreapi.com/products/${id}`;
-  // console.log(url);
+
   fetch(url)
     .then((res) => res.json())
     .then((result) => displayProductDetails(result));
 };
 
 const displayProductDetails = (productDetails) => {
-  console.log(productDetails);
   const productDetailsContainer = document.getElementById(
     "product-details-container",
   );
@@ -66,14 +86,11 @@ const displayProductDetails = (productDetails) => {
 };
 
 const displayProductCategories = (productCategory) => {
-  // console.log(productCategory);
   const productCategoryContainer =
     document.getElementById("category-container");
   productCategoryContainer.innerHTML = "";
 
   for (const product of productCategory) {
-    // console.log(product);
-
     const maxTitleLength = 30;
     const title =
       product.title.length > maxTitleLength
@@ -117,14 +134,29 @@ const displayProductCategories = (productCategory) => {
           </div>`;
     productCategoryContainer.append(productCard);
   }
+  loading(false);
 };
 
 const displayAllCategories = (allCategory) => {
   const categoriesContainer = document.getElementById("categories-container");
   categoriesContainer.innerHTML = "";
 
+  const categoryDiv = document.createElement("div");
+  const btn = document.createElement("button");
+
+  btn.textContent = "All";
+  btn.id = `all`;
+  btn.className =
+    "hover:bg-[#4F39F6] hover:text-white border border-gray-300 rounded-full px-5 py-1 category-btn active";
+
+  btn.addEventListener("click", () => {
+    allCategories();
+  });
+
+  categoryDiv.append(btn);
+  categoriesContainer.append(categoryDiv);
+
   for (const category of allCategory) {
-    // console.log(category);
     const categoryDiv = document.createElement("div");
     const btn = document.createElement("button");
 
@@ -140,5 +172,7 @@ const displayAllCategories = (allCategory) => {
     categoryDiv.append(btn);
     categoriesContainer.append(categoryDiv);
   }
+
+  allCategories();
 };
 loadAllProductsLevel();
